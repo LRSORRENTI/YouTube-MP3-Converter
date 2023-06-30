@@ -8,7 +8,7 @@ body {
 }
 
 h1 {
-  border: 1px solid black;
+  border: 1px currentColor;
   padding-top: 20px;
   padding-bottom: 20px;
   display: flex;
@@ -27,12 +27,13 @@ h1 {
 
 form {
   display: flex;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 input[type="text"] {
   width: 100%;
   padding: 10px;
+  border-radius: 5px;
 }
 
 button {
@@ -52,4 +53,5 @@ button:hover {
   border-radius: 7px;
   color: #fff;
   transform: scale(1.1); /* Increasing the size on hover */
+  cursor: pointer;
 }
