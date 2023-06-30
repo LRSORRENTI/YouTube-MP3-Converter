@@ -17,6 +17,7 @@ h1 {
   font-family: "Bebas", sans-serif;
   font-size: 55px;
   color: rgb(185, 248, 227);
+  text-shadow: 3px 3px #1ee5d8, -5px 6px 30px #1ee5d8;
 }
 .container {
   margin-top: 100px;
@@ -46,10 +47,11 @@ button {
   border: none;
   border-radius: 5px;
   color: #333;
+  font-family: "Bebas", sans-serif;
 }
 
 button:hover {
-  background-color: rgb(116, 237, 197);
+  background-color: #1ee5d8;
   border-radius: 7px;
   color: #fff;
   transform: scale(1.1); /* Increasing the size on hover */

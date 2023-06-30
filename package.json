@@ -11,5 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "youtube-exec": "^1.0.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.22.5",
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5"
   }
 }
