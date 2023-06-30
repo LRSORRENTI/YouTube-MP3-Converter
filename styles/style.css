@@ -1,12 +1,22 @@
+@font-face {
+  font-family: Bebas;
+  src: url(/styles/BebasNeue-Regular.ttf);
+}
+
+body {
+  background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+}
+
 h1 {
   border: 1px solid black;
   padding-top: 20px;
   padding-bottom: 20px;
   display: flex;
   justify-content: center;
-  font-family: sans-serif;
   margin-top: 80px;
-  font-family: "BebasNeue", sans-serif;
+  font-family: "Bebas", sans-serif;
+  font-size: 55px;
+  color: rgb(185, 248, 227);
 }
 .container {
   margin-top: 100px;
@@ -17,14 +27,29 @@ h1 {
 
 form {
   display: flex;
+  border-radius: 20px;
 }
 
 input[type="text"] {
   width: 100%;
-  padding: 5px;
+  padding: 10px;
 }
 
 button {
   margin-left: 10px;
-  padding: 5px 10px;
+  padding: 10px 15px;
+  transition: all 0.3s ease; /* Adding transition for smooth animation */
+
+  /* Default styles */
+  background-color: rgb(185, 248, 227);
+  border: none;
+  border-radius: 5px;
+  color: #333;
+}
+
+button:hover {
+  background-color: rgb(116, 237, 197);
+  border-radius: 7px;
+  color: #fff;
+  transform: scale(1.1); /* Increasing the size on hover */
 }
