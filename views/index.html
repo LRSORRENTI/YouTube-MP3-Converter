@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="../public/css/main.css" /> -->
+    <link rel="stylesheet" href="../public/css/main.css" /> 
     <title>YT to MP3</title>
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/BebasNeue-Regular.ttf" />
   </head>
-  <body>
+  <body> 
     <h1>YouTube To MP3 Converter</h1>
     <div class="container">
       <form id="myForm">
@@ -16,6 +16,72 @@
         <button type="submit">Convert</button>
       </form>
     </div>
-    <script src="dist/script.js" type="module"></script>
+    <script src="/dist/script.js" type="module"></script> 
+    <script>
+      document
+        .getElementById("myForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const url = document.getElementById("myInput").value;
+          fetch("/convert", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ url: url }),
+          })
+            .then((response) => response.blob())
+            .then((blob) => {
+              const url = window.URL.createObjectURL(blob);
+              const a = document.createElement("a");
+              a.style.display = "none";
+              a.href = url;
+              a.download = "video.mp3";
+              document.body.appendChild(a);
+              a.click();
+              window.URL.revokeObjectURL(url);
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+            });
+        });
+    </script>
+ 
   </body>
 </html>
+<!--
+<script>
+  document.getElementById("myForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const url = document.getElementById("myInput").value;
+    fetch("/convert", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ url: url }),
+    })
+      .then((response) => response.blob())
+      .then((blob) => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.style.display = "none";
+        a.href = url;
+
+        // Extract video file name
+        const videoFileName = url.substring(url.lastIndexOf("/") + 1);
+
+        // Set default file name for download
+        a.download =
+          videoFileName.substr(0, videoFileName.lastIndexOf(".")) + ".mp3";
+
+        // Rest of the code
+        // ...
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  });
+</script>
