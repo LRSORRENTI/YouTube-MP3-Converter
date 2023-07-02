@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../public/css/main.css" /> 
+    <!-- <link rel="stylesheet" href="../public/css/main.css" />  -->
     <title>YT to MP3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/BebasNeue-Regular.ttf" />
   </head>
@@ -16,37 +17,30 @@
         <button type="submit">Convert</button>
       </form>
     </div>
-    <script src="/dist/script.js" type="module"></script> 
-    <script>
-      document
-        .getElementById("myForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
 
-          const url = document.getElementById("myInput").value;
-          fetch("/convert", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ url: url }),
-          })
-            .then((response) => response.blob())
-            .then((blob) => {
-              const url = window.URL.createObjectURL(blob);
-              const a = document.createElement("a");
-              a.style.display = "none";
-              a.href = url;
-              a.download = "video.mp3";
-              document.body.appendChild(a);
-              a.click();
-              window.URL.revokeObjectURL(url);
-            })
-            .catch((error) => {
-              console.error("Error:", error);
-            });
-        });
-    </script>
+    <script>
+      $(document).ready(function(){
+          $("#myForm").on('submit', function(e){
+              e.preventDefault();
+      
+              $.ajax({
+                  url: '/convert',
+                  type: 'post',
+                  dataType: 'json',
+                  contentType: 'application/json',
+                  success: function (data) {
+                      // redirect to the mp3 file
+                      window.location.href = data.link;
+                  },
+                  error: function (err) {
+                    console.log('coming from index.html line 36', err)
+                      alert("An error occurred:", err);
+                  },
+                  data: JSON.stringify({ "url": $('#myInput').val() })
+              });
+          });
+      });
+      </script>
  
   </body>
 </html>
