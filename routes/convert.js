@@ -44,7 +44,7 @@ router.post('/', async (req, res) => {
             ffmpeg(stream)
                 .audioBitrate(320)
                 .toFormat('mp3')
-                .saveToFile(`./public/${filename}.mp3`) // include .mp3 extension
+                .saveToFile(`./MP3-Files/${filename}.mp3`) // include .mp3 extension
                 .on('end', resolve)
                 .on('error', reject);
         });
