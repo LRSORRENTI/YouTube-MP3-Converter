@@ -205,16 +205,29 @@ button:hover {
 
 @media (min-width: 1001px) {
   /* Styles for screen size larger than 1000px */
+  h1 {
+    font-size: 75px;
+  }
   body {
     margin: 40px;
   }
 
   .container {
-    margin-top: 190px;
+    margin-top: 170px;
   }
 
   form {
     max-width: 800px;
     margin: 0 auto;
+  }
+  button {
+    margin-left: 10px;
+    padding: 11px 16px;
+    transition: all 0.3s ease;
+    background-color: rgb(185, 248, 227);
+    border: none;
+    border-radius: 5px;
+    color: #333;
+    font-family: "Bebas", sans-serif;
   }
 }
