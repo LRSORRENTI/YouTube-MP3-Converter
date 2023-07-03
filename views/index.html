@@ -9,75 +9,42 @@
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/BebasNeue-Regular.ttf" />
   </head>
-  <body> 
+  <body>
     <h1>YouTube To MP3 Converter</h1>
     <div class="container">
-      <form id="myForm">
+      <form id="myForm" autocomplete="off">
         <input type="text" id="myInput" placeholder="Enter YouTube URL" />
         <button type="submit">Convert</button>
       </form>
     </div>
 
     <script>
-      $(document).ready(function(){
-    $("#myForm").on('submit', function(e){
-        e.preventDefault();
+      $(document).ready(function () {
+        $("#myForm").on("submit", function (e) {
+          e.preventDefault();
 
-        var filename = window.prompt("Enter a filename for your download");
-  
-        $.ajax({
-            url: '/convert',
-            type: 'post',
-            dataType: 'json',
-            contentType: 'application/json',
+          var filename = window.prompt("Enter a filename for your download");
+
+          $.ajax({
+            url: "/convert",
+            type: "post",
+            dataType: "json",
+            contentType: "application/json",
             success: function (data) {
-                // redirect to the mp3 file
-                window.location.href = data.link;
+              // redirect to the mp3 file
+              window.location.href = data.link;
             },
             error: function (err) {
-                alert("An error occurred:", err);
+              alert("An error occurred:", err);
             },
-            data: JSON.stringify({ "url": $('#myInput').val(), "filename": filename })
+            data: JSON.stringify({
+              url: $("#myInput").val(),
+              filename: filename,
+            }),
+          });
+          $("#myInput").val("");
         });
-    });
-});
-
- </script>
- 
+      });
+    </script>
   </body>
 </html>
-<!--
-<script>
-  document.getElementById("myForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const url = document.getElementById("myInput").value;
-    fetch("/convert", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ url: url }),
-    })
-      .then((response) => response.blob())
-      .then((blob) => {
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.style.display = "none";
-        a.href = url;
-
-        // Extract video file name
-        const videoFileName = url.substring(url.lastIndexOf("/") + 1);
-
-        // Set default file name for download
-        a.download =
-          videoFileName.substr(0, videoFileName.lastIndexOf(".")) + ".mp3";
-
-        // Rest of the code
-        // ...
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  });
-</script>

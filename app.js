@@ -11,6 +11,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, 'Public')));
 app.use(express.static(path.join(__dirname, 'MP3-Files')));
+app.use(express.static(path.join(__dirname, 'views')));
 
 app.use(express.json()); // Middleware to parse JSON requests
 app.use('/', mainRoute);

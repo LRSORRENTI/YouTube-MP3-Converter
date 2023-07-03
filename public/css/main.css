@@ -154,6 +154,7 @@ button:hover {
   color: #fff;
   transform: scale(1.1);
   cursor: pointer;
+  box-shadow: 1px 2px 1px #1ee5d8;
 }
 
 @media (max-width: 520px) {
@@ -230,4 +231,21 @@ button:hover {
     color: #333;
     font-family: "Bebas", sans-serif;
   }
+}
+
+#download-link {
+  text-decoration: none;
+  color: rgb(43, 61, 226);
+}
+
+#download-btn {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  box-shadow: 2px 2px 5px #1ee5d8;
+}
+
+#download-btn:hover {
+  text-decoration: underline;
+  color: rgb(43, 61, 226);
 }
