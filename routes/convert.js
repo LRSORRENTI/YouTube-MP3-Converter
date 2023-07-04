@@ -30,8 +30,10 @@
 const express = require('express');
 const router = express.Router();
 const ytdl = require('ytdl-core');
+const ffmpegInstaller = require('@ffmpeg-installer/ffmpeg');
 const ffmpeg = require('fluent-ffmpeg');
 const fs = require('fs');
+ffmpeg.setFfmpegPath(ffmpegInstaller.path);
 
 router.post('/', async (req, res) => {
     const url = req.body.url;
