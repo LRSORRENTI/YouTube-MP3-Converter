@@ -2,8 +2,6 @@
 
 **This project is a web application for converting YouTube videos into MP3 audio files. It's written in JavaScript and runs on Node.js, using the Express.js framework for routing.**
 
-SO
-
 ## How It Works
 
 **When the user submits a YouTube URL through the web interface, the backend server uses the ytdl-core and fluent-ffmpeg libraries to download the video's audio track and convert it into an MP3 file. The resulting MP3 file is saved on the server, and a link to download the file is then sent back to the client.**
@@ -45,7 +43,7 @@ npm run start
 
 ## Legal Note
 
-**This application is intended for personal use and educational purposes. It is your responsibility to respect YouTube's Terms of Service and the copyright of content creators.**
+**This application is intended for personal use and educational purposes. It's your responsibility to respect YouTube's Terms of Service and the copyright of content creators.**
 
 ## Contributing
 
