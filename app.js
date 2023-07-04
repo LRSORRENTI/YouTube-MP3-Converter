@@ -9,7 +9,7 @@ const convertRoute = require('./routes/convert');
 // Get port from environment variables or use 3000 as a default
 const port = process.env.PORT || 3000;
 
-app.use(express.static(path.join(__dirname, 'Public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'MP3-Files')));
 app.use(express.static(path.join(__dirname, 'views')));
 app.use('/MP3-Files', express.static('MP3-Files'));
