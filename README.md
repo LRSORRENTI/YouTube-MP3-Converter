@@ -19,8 +19,8 @@
 **Clone the repository**
 
 ```console
-git clone https://github.com/LRSORRENTI/JS_YT-mp3
-cd JS_YT-mp3
+git clone git@github.com:LRSORRENTI/YouTube-MP3-Converter.git
+cd YouTube-MP3-Converter
 ```
 
 **Install the project dependencies**
