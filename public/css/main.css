@@ -116,6 +116,21 @@ h1 {
   transition: margin-top 0.3s ease;
 }
 
+#afterClick {
+  border: 1px currentColor;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  font-family: "Bebas", sans-serif;
+  font-size: 55px;
+  color: rgb(185, 248, 227);
+  text-shadow: 3px 3px #1ee5d8, -5px 6px 30px #1ee5d8;
+  transition: margin-top 0.3s ease;
+}
+
 .container {
   margin-top: 100px;
   display: flex;
@@ -141,10 +156,10 @@ button {
   margin-left: 10px;
   padding: 10px 15px;
   transition: all 0.3s ease;
-  background-color: rgb(185, 248, 227);
+  background-color: #1ee5d8;
   border: none;
   border-radius: 5px;
-  color: #585757;
+  color: #181818;
   font-family: "Bebas", sans-serif;
 }
 
@@ -155,6 +170,36 @@ button:hover {
   transform: scale(1.1);
   cursor: pointer;
   box-shadow: 1px 2px 1px #1ee5d8;
+}
+
+.dots-loading span {
+  display: none;
+  width: 8px;
+  height: 8px;
+  margin-right: 5px;
+  background: #1ee5d8;
+  border-radius: 50%;
+  animation: dots-loading 1.5s infinite;
+}
+
+.dots-loading span:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.dots-loading span:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes dots-loading {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
 }
 
 @media (max-width: 520px) {
@@ -228,24 +273,28 @@ button:hover {
     background-color: rgb(185, 248, 227);
     border: none;
     border-radius: 5px;
-    color: #333;
+    color: #141414;
     font-family: "Bebas", sans-serif;
   }
 }
 
 #download-link {
   text-decoration: none;
-  color: rgb(43, 61, 226);
+  color: rgb(221, 221, 221);
+}
+
+#download-link:hover {
+  color: rgb(3, 25, 25);
 }
 
 #download-btn {
   display: flex;
   justify-content: center;
   margin: auto;
-  box-shadow: 2px 2px 5px #1ee5d8;
+  box-shadow: 2px 2px 5px #002321;
 }
 
 #download-btn:hover {
   text-decoration: underline;
-  color: rgb(43, 61, 226);
+  color: rgb(0, 0, 0);
 }
