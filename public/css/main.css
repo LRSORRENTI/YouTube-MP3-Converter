@@ -280,11 +280,11 @@ button:hover {
 
 #download-link {
   text-decoration: none;
-  color: rgb(221, 221, 221);
+  color: rgb(0, 0, 0);
 }
 
 #download-link:hover {
-  color: rgb(3, 25, 25);
+  color: rgb(202, 249, 249);
 }
 
 #download-btn {
@@ -296,5 +296,5 @@ button:hover {
 
 #download-btn:hover {
   text-decoration: underline;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
