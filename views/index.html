@@ -18,11 +18,18 @@
       </form>
     </div>
 
+    <div class="dots-loading">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <script>
       $(document).ready(function () {
         $("#myForm").on("submit", function (e) {
           e.preventDefault();
-
+          document.querySelector(".dots-loading").style.display =
+            "inline-block"; // Show the dots
           var filename = window.prompt("Enter a filename for your download");
 
           $.ajax({
