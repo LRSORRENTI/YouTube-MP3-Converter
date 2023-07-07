@@ -116,6 +116,21 @@ h1 {
   transition: margin-top 0.3s ease;
 }
 
+#afterClick {
+  border: 1px currentColor;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  font-family: "Bebas", sans-serif;
+  font-size: 55px;
+  color: rgb(185, 248, 227);
+  text-shadow: 3px 3px #1ee5d8, -5px 6px 30px #1ee5d8;
+  transition: margin-top 0.3s ease;
+}
+
 .container {
   margin-top: 100px;
   display: flex;
@@ -141,10 +156,10 @@ button {
   margin-left: 10px;
   padding: 10px 15px;
   transition: all 0.3s ease;
-  background-color: rgb(185, 248, 227);
+  background-color: #1ee5d8;
   border: none;
   border-radius: 5px;
-  color: #585757;
+  color: #181818;
   font-family: "Bebas", sans-serif;
 }
 
@@ -258,18 +273,18 @@ button:hover {
     background-color: rgb(185, 248, 227);
     border: none;
     border-radius: 5px;
-    color: #333;
+    color: #141414;
     font-family: "Bebas", sans-serif;
   }
 }
 
 #download-link {
   text-decoration: none;
-  color: rgb(86, 86, 86);
+  color: rgb(221, 221, 221);
 }
 
 #download-link:hover {
-  color: rgb(46, 144, 144);
+  color: rgb(3, 25, 25);
 }
 
 #download-btn {
@@ -281,5 +296,5 @@ button:hover {
 
 #download-btn:hover {
   text-decoration: underline;
-  color: rgb(159, 169, 255);
+  color: rgb(0, 0, 0);
 }

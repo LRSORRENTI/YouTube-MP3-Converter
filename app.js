@@ -7,7 +7,7 @@ const convertRoute = require('./routes/convert');
 // const convertRoute = require('./src/convert');
 
 // Get port from environment variables or use 3000 as a default
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'MP3-Files')));

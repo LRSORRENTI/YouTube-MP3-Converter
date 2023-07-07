@@ -17,7 +17,7 @@
         <button type="submit">Convert</button>
       </form>
     </div>
-
+    <p id="afterClick">Converting...</p>
     <div class="dots-loading">
       <span></span>
       <span></span>
@@ -28,7 +28,7 @@
       $(document).ready(function () {
         $("#myForm").on("submit", function (e) {
           e.preventDefault();
-          $(".dots-loading").fadeIn(); // Show the dots
+          $("#afterClick").fadeIn();
           var filename = window.prompt("Enter a filename for your download");
 
           $.ajax({
@@ -48,11 +48,14 @@
               filename: filename,
             }),
             complete: function () {
-              $(".dots-loading").fadeOut(); // Hide the dots once AJAX request is complete
+              $("#afterClick").fadeOut(); // Hide the dots once AJAX request is complete
             },
           });
           $("#myInput").val("");
+          document.getElementById("afterClick").style.display = "flex";
+          document.body.style.cursor = "progress";
         });
+        // When some event happens...
       });
     </script>
   </body>
