@@ -265,17 +265,21 @@ button:hover {
 
 #download-link {
   text-decoration: none;
-  color: rgb(43, 61, 226);
+  color: rgb(86, 86, 86);
+}
+
+#download-link:hover {
+  color: rgb(46, 144, 144);
 }
 
 #download-btn {
   display: flex;
   justify-content: center;
   margin: auto;
-  box-shadow: 2px 2px 5px #1ee5d8;
+  box-shadow: 2px 2px 5px #002321;
 }
 
 #download-btn:hover {
   text-decoration: underline;
-  color: rgb(43, 61, 226);
+  color: rgb(159, 169, 255);
 }

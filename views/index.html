@@ -28,8 +28,7 @@
       $(document).ready(function () {
         $("#myForm").on("submit", function (e) {
           e.preventDefault();
-          document.querySelector(".dots-loading").style.display =
-            "inline-block"; // Show the dots
+          $(".dots-loading").fadeIn(); // Show the dots
           var filename = window.prompt("Enter a filename for your download");
 
           $.ajax({
@@ -48,6 +47,9 @@
               url: $("#myInput").val(),
               filename: filename,
             }),
+            complete: function () {
+              $(".dots-loading").fadeOut(); // Hide the dots once AJAX request is complete
+            },
           });
           $("#myInput").val("");
         });
