@@ -291,10 +291,11 @@ button:hover {
   display: flex;
   justify-content: center;
   margin: auto;
-  box-shadow: 2px 2px 5px #002321;
+  transition: 0.3s ease;
 }
 
 #download-btn:hover {
   text-decoration: underline;
   color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 2px #1ee5d8;
 }
