@@ -79,8 +79,8 @@ const deleteFiles = async (dirPath) => {
 const schedule = require('node-schedule');
 
 // Schedule a job to delete all files in the directory every 10 minutes
-schedule.scheduleJob('*/10 * * * *', function(){
-  deleteFiles('./MP3-Files');
-});
+// schedule.scheduleJob('*/10 * * * *', function(){
+//   deleteFiles('./MP3-Files');
+// });
 
 module.exports = router;
