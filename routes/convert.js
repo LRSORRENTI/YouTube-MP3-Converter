@@ -63,14 +63,28 @@ router.post('/', async (req, res) => {
     }
 });
 
+router.get('/MP3-Files/:filename', (req, res) => {
+    // Note: Make sure the filename is validated and sanitized to prevent any security issues
+    let filename = req.params.filename;
+    filename = path.basename(filename)
+    res.download(`./MP3-Files/${filename}`, filename, function(err){
+        if (err) {
+          // handle error
+          console.log(`Error:${err}`)
+        } else {
+          // file sent successfully
+        }
+    });
+});
 const deleteFiles = async (dirPath) => {
     try {
         const files = await fs.promises.readdir(dirPath);
 
         for (const file of files) {
-            await fs.promises.unlink(path.join(dirPath, file));
+            if (file !== '.gitkeep') { // do not delete .gitkeep file
+                await fs.promises.unlink(path.join(dirPath, file));
+            }
         }
-
     } catch (error) {
         console.error("Failed to delete files", error);
     }
@@ -79,8 +93,8 @@ const deleteFiles = async (dirPath) => {
 const schedule = require('node-schedule');
 
 // Schedule a job to delete all files in the directory every 10 minutes
-// schedule.scheduleJob('*/10 * * * *', function(){
-//   deleteFiles('./MP3-Files');
-// });
+schedule.scheduleJob('*/10 * * * *', function(){
+  deleteFiles('./MP3-Files');
+});
 
 module.exports = router;
