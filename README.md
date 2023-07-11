@@ -39,7 +39,7 @@ npm run start
 
 ## Usage
 
-**Simply paste a YouTube URL into the input field and click "Convert". You'll be prompted to enter a filename for the MP3. Once the conversion is finished, the page redirects to a download page where you can verify the audio, and the converted MP3 will also be inside of the MP3-Files directory**
+**Simply paste a YouTube URL into the input field and click "Convert". You'll be prompted to enter a filename for the MP3. Once the conversion is finished, press 'Click Here To Download', and the converted MP3 will be inside of your downloads folder, it will also be inside of the MP3-Files directory**
 
 ## Legal Note
 
