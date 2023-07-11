@@ -81,9 +81,10 @@ const deleteFiles = async (dirPath) => {
         const files = await fs.promises.readdir(dirPath);
 
         for (const file of files) {
-            await fs.promises.unlink(path.join(dirPath, file));
+            if (file !== '.gitkeep') { // do not delete .gitkeep file
+                await fs.promises.unlink(path.join(dirPath, file));
+            }
         }
-
     } catch (error) {
         console.error("Failed to delete files", error);
     }
@@ -92,8 +93,8 @@ const deleteFiles = async (dirPath) => {
 const schedule = require('node-schedule');
 
 // Schedule a job to delete all files in the directory every 10 minutes
-// schedule.scheduleJob('*/10 * * * *', function(){
-//   deleteFiles('./MP3-Files');
-// });
+schedule.scheduleJob('*/10 * * * *', function(){
+  deleteFiles('./MP3-Files');
+});
 
 module.exports = router;
