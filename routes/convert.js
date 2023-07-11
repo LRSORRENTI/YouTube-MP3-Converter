@@ -63,6 +63,19 @@ router.post('/', async (req, res) => {
     }
 });
 
+router.get('/MP3-Files/:filename', (req, res) => {
+    // Note: Make sure the filename is validated and sanitized to prevent any security issues
+    let filename = req.params.filename;
+    filename = path.basename(filename)
+    res.download(`./MP3-Files/${filename}`, filename, function(err){
+        if (err) {
+          // handle error
+          console.log(`Error:${err}`)
+        } else {
+          // file sent successfully
+        }
+    });
+});
 const deleteFiles = async (dirPath) => {
     try {
         const files = await fs.promises.readdir(dirPath);

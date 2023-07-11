@@ -8,14 +8,15 @@
   <body>
     <h1>Your MP3 is ready!</h1>
     <button id="download-btn">
-      <a id="download-link" href="#">Click Here To Download</a>
+      <a id="download-link" download href="#">Click Here To Download</a>
     </button>
 
     <script>
       // Get the filename from the URL parameters and update the download link
       const params = new URLSearchParams(window.location.search);
       const filename = params.get("file");
-      document.getElementById("download-link").href = `/MP3-Files/${filename}`;
+      const linkElement = document.getElementById("download-link");
+      linkElement.href = `/MP3-Files/${filename}`;
     </script>
   </body>
 </html>

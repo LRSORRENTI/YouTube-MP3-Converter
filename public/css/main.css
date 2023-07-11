@@ -128,7 +128,6 @@ h1 {
   font-size: 55px;
   color: rgb(185, 248, 227);
   text-shadow: 3px 3px #1ee5d8, -5px 6px 30px #1ee5d8;
-  transition: margin-top 0.3s ease;
 }
 
 .container {

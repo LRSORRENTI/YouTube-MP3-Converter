@@ -52,11 +52,48 @@
             },
           });
           $("#myInput").val("");
-          document.getElementById("afterClick").style.display = "flex";
+          document.getElementById("afterClick").style.display = " ease-in flex";
           document.body.style.cursor = "progress";
         });
         // When some event happens...
       });
     </script>
+    <!-- <script>
+      $(document).ready(function () {
+        $("#myForm").on("submit", function (e) {
+          e.preventDefault();
+          var filename = window.prompt("Enter a filename for your download");
+
+          $.ajax({
+            url: "/convert",
+            type: "post",
+            dataType: "json",
+            contentType: "application/json",
+            success: function (data) {
+              // redirect to the mp3 file
+              window.location.href = data.link;
+            },
+            error: function (err) {
+              alert("An error occurred:", err);
+            },
+            data: JSON.stringify({
+              url: $("#myInput").val(),
+              filename: filename,
+            }),
+            beforeSend: function () {
+              $("#afterClick").fadeIn(); // Show the dots before the AJAX request is sent
+              document.body.style.cursor = "progress";
+              
+            },
+            complete: function () {
+              $("#afterClick").fadeOut(); // Hide the dots once AJAX request is complete
+              document.body.style.cursor = "default";
+            },
+          });
+
+          $("#myInput").val("");
+        });
+      });
+    </script> -->
   </body>
 </html>
