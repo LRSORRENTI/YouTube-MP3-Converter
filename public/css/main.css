@@ -227,7 +227,7 @@ button:hover {
 @media (max-width: 499px) {
   /* Styles for screen size smaller than or equal to 500px */
   h1 {
-    font-size: 40px; /* Adjust the font size as desired */
+    font-size: 24px; /* Adjust the font size as desired */
     white-space: nowrap; /* Prevent text from wrapping */
     overflow: hidden; /* Hide overflowing text */
     text-overflow: ellipsis; /* Show ellipsis (...) for hidden text */
