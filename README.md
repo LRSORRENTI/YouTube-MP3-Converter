@@ -1,5 +1,5 @@
 # JavaScript YouTube to MP3
-
+![Project Image](/assets/YT-Convert.jpg.png)
 **This project is a web application for converting YouTube videos into MP3 audio files. It's written in JavaScript and runs on Node.js, using the Express.js framework for routing.**
 
 ## How It Works
