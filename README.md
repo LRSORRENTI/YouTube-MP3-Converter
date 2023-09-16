@@ -35,11 +35,11 @@ npm install
 npm run start
 ```
 
-**The server will start on port 8080. You can access the web interface by navigating to 'http://localhost:8080' in your web browser**
+**The server will start on port 8080. You can access the web interface by navigating to 'http://localhost:8080' in your web browser.**
 
 ## Usage
 
-**Simply paste a YouTube URL into the input field and click "Convert". You'll be prompted to enter a filename for the MP3. Once the conversion is finished, press 'Click Here To Download', and the converted MP3 will be inside of your downloads folder, it will also be inside of the MP3-Files directory**
+**Simply paste a YouTube URL into the input field and click "Convert". You'll be prompted to enter a filename for the MP3. Once the conversion is finished, press 'Click Here To Download', and the converted MP3 will be inside of your downloads folder, it will also be inside of the MP3-Files directory.**
 
 ## Legal Note
 
