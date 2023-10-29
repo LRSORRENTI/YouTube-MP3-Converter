@@ -128,7 +128,21 @@ h1 {
   font-size: 55px;
   color: rgb(185, 248, 227);
   text-shadow: 3px 3px #1ee5d8, -5px 6px 30px #1ee5d8;
+  animation: pulse 3s infinite;
 }
+
+@keyframes pulse {
+  0% {
+    color: #1ee5d8
+  }
+  50%{
+    opacity: 0;
+  }
+  100% {
+    color: #1ee5d8
+  }
+}
+
 
 .container {
   margin-top: 100px;
