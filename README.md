@@ -35,7 +35,7 @@ npm install
 npm run start
 ```
 
-**The server will start on port 8080. You can access the web interface by navigating to 'http://localhost:8080' in your web browser.**
+**The server will start on port 3000. You can access the web interface by navigating to 'http://localhost:8080' in your web browser.**
 
 ## Usage
 
